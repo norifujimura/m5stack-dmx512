@@ -7,14 +7,12 @@
 SoftwareSerial mySerial;
 
 int brightness = 0;
-//int Tx = 33;//DMXoutputPin
 void setup() {
   M5.begin();
   M5.Lcd.clear(); 
   M5.Lcd.setCursor(0, 0);
   M5.Lcd.setTextSize(1);
   M5.Lcd.print("M5Stack DMX512");
-  //Serial2.begin(250000,SERIAL_8N2,32,33);//Grove
 }
 void loop() {
   M5.update(); 
@@ -41,7 +39,6 @@ void writeDMX(int x){
 
       mySerial.begin(250000, SWSERIAL_8N2, swrxPin, swtxPin , false, 256);
       mySerial.enableIntTx(true);
-      //Serial2.begin(250000,SERIAL_8N2);//Grove
       uint8_t zero = 0;
       mySerial.write(zero);//Start Code as 0
       mySerial.write(zero);//Ch1 Data
