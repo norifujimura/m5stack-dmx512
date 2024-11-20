@@ -2,8 +2,8 @@
 //#include <M5Core2.h>
 #include <M5Unified.h>
 #include <SoftwareSerial.h>
-#define swrxPin 32 //core2+official DMX: 33. seedStudio+core2: 32. seedStudio+AtomS 2
-#define swtxPin 33 //core2+official DMX: 32. seedStudio+core2: 33 seedStudio+AtomS 1
+#define swrxPin 32 //seedStudio+core2: 32. seedStudio+AtomS3 2
+#define swtxPin 33 //cseedStudio+core2: 33 seedStudio+AtomS3 1
 
 SoftwareSerial mySerial;
 
