@@ -2,8 +2,8 @@
 //#include <M5Core2.h>
 #include <M5Unified.h>
 #include <SoftwareSerial.h>
-#define swrxPin 32 //seedStudio+core2: 32. seedStudio+AtomS3 2
-#define swtxPin 33 //cseedStudio+core2: 33 seedStudio+AtomS3 1
+#define swrxPin 16 //seedStudio+core2: 32. seedStudio+AtomS3 2 DMXUnit:33?   m5go-bottom G17
+#define swtxPin 17 //cseedStudio+core2: 33 seedStudio+AtomS3 1 m5go-bottom G16
 
 SoftwareSerial mySerial;
 
@@ -27,7 +27,7 @@ void loop() {
      writeDMX(255- brightness);
      delay(10);
     }    
-    //delay(400);
+    delay(400);
  
 }
 
@@ -48,6 +48,18 @@ void writeDMX(int x){
       uint8_t full= 255;
       mySerial.write(zero);//Start Code as 0
 
+      mySerial.write(half);//Ch1 pan
+      mySerial.write(half);//Ch2 tilt
+      mySerial.write(zero);//Ch3 speed
+      mySerial.write(full);//Ch4 dim
+      mySerial.write(zero);//Ch5 strobe
+      mySerial.write(zero);//Ch6 r
+      mySerial.write(full);//Ch7 g
+      mySerial.write(zero);//Ch8 b
+      mySerial.write(zero);//Ch9 w
+      mySerial.write(zero);//Ch10 or
+      mySerial.write(zero);//Ch11 uv
+      /*
       mySerial.write(full);//Ch1 pan
       mySerial.write(half);//Ch2 tilt
       mySerial.write(zero);//Ch3 speed
@@ -59,6 +71,7 @@ void writeDMX(int x){
       mySerial.write(full);//Ch9 w
       mySerial.write(zero);//Ch10 or
       mySerial.write(zero);//Ch11 uv
+      */
       /*
       mySerial.write(full);//Ch1 Data
       mySerial.write(zero);//Ch2 Data

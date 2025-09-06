@@ -3,8 +3,8 @@
 #include <M5Unified.h>
 #include <SoftwareSerial.h>
 // rx26 tx32 for atom/ atom matrix
-#define swrxPin 26
-#define swtxPin 32
+#define swrxPin 39
+#define swtxPin 38
 
 SoftwareSerial mySerial;
 
@@ -48,8 +48,10 @@ void writeDMX(int x){
       mySerial.begin(250000, SWSERIAL_8N2, swrxPin, swtxPin , false, 256);
       mySerial.enableIntTx(true);
       uint8_t zero = 0;
+      uint8_t half = 127;
+      uint8_t full = 255;
       mySerial.write(zero);//Start Code as 0
+      mySerial.write(zero);//Ch1 Data
       mySerial.write(x);//Ch1 Data
-      mySerial.write(x);//Ch2 Data
       mySerial.end();
  }
