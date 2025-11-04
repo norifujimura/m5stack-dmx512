@@ -2,8 +2,8 @@
 //#include <M5Core2.h>
 #include <M5Unified.h>
 #include <SoftwareSerial.h>
-#define swrxPin 1 //coreS3+DMXUnit+120OhmOn:16 AtomS3+DMXUnit+120OhmOn:1 seedStudio+core2: 32. seedStudio+AtomS3 2 DMXUnit:33?   m5go-bottom G17
-#define swtxPin 2 //coreS3DMXUnit++120ohmOn:17 AtomS3+DMXUnit+120OhmOn:2 cseedStudio+core2: 33 seedStudio+AtomS3 1 m5go-bottom G16
+#define swrxPin 33 //coreS3+DMXUnit+120OhmOn:16 AtomS3+DMXUnit+120OhmOn:1 seedStudio+core2: 32. seedStudio+AtomS3 2 DMXUnit:33?   m5go-bottom G17
+#define swtxPin 32 //coreS3DMXUnit++120ohmOn:17 AtomS3+DMXUnit+120OhmOn:2 cseedStudio+core2: 33 seedStudio+AtomS3 1 m5go-bottom G16
 
 SoftwareSerial mySerial;
 
@@ -55,10 +55,10 @@ void writeDMX(int x){
       uint8_t full= 255;
       mySerial.write(zero);//Start Code as 0
 
-      mySerial.write(full);//Ch1 pan
+      mySerial.write(zero);//Ch1 pan
       mySerial.write(zero);//Ch2 tilt
       mySerial.write(zero);//Ch3 speed
-      mySerial.write(zero);//Ch4 dim
+      mySerial.write(full);//Ch4 dim
       mySerial.write(zero);//Ch5 strobe
       mySerial.write(zero);//Ch6 r
       mySerial.write(zero);//Ch7 g

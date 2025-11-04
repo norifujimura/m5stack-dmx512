@@ -5,5 +5,5 @@ Modified https://qiita.com/Ina3/items/4a596d8f0849917c5058 code using SoftwareSe
 Thanks to @aodama-san https://twitter.com/aodama for kind advice.
 
 *
-
+2025Nov4th: M5Stack-DMX unit now works with m5stack_dmx512_unified. See the comment in the code for pin numbers for each of M5Stack platform
 2024Nov Addition:  added copy of https://github.com/m5stack/M5Unit-DMX512 with pin/120ohm switch condition memo for ATOMS3 and Core2
